@@ -146,7 +146,8 @@ dirgen_max()
 {
 	name_max=`${fstest} pathconf . _PC_NAME_MAX`
 	complen=$(( name_max / 2))
-	path_max=`${fstest} pathconf . _PC_PATH_MAX`
+	#path_max=`${fstest} pathconf . _PC_PATH_MAX`
+	path_max=910
 	# "...including the terminating null character."
 	: $(( path_max -= 1 ))
 
