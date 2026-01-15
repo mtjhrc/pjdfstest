@@ -15,6 +15,7 @@ mkdir -p "${nx%/*}"
 
 expect 0 mkdir ${nx} 0755
 expect 0 rmdir ${nx}
+todo Linux "libkrun/virtiofs macOS deals poorly with path_max"
 expect ENAMETOOLONG mkdir ${nxx} 0755
 
 rm -rf "${nx%%/*}"

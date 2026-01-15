@@ -21,6 +21,7 @@ expect 0 create ${nx} 0644
 expect 0 chmod ${nx} 0642
 expect 0642 stat ${nx} mode
 expect 0 unlink ${nx}
+todo Linux "libkrun/virtiofs macOS deals poorly with path_max"
 expect ENAMETOOLONG chmod ${nxx} 0642
 
 if supported lchmod; then

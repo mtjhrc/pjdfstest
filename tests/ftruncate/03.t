@@ -17,6 +17,7 @@ expect 0 create ${nx} 0644
 expect 0 truncate ${nx} 123
 expect regular,123 stat ${nx} type,size
 expect 0 unlink ${nx}
+todo Linux "libkrun/virtiofs macOS deals poorly with path_max"
 expect ENAMETOOLONG truncate ${nxx} 123
 
 rm -rf "${nx%%/*}"

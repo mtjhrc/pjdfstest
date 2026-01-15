@@ -17,6 +17,8 @@ expect 0 symlink ${nx} ${n0}
 expect 0 unlink ${n0}
 expect 0 symlink ${n0} ${nx}
 expect 0 unlink ${nx}
+todo Linux "libkrun/virtiofs macOS deals poorly with path_max"
 expect ENAMETOOLONG symlink ${n0} ${nxx}
+todo Linux "libkrun/virtiofs macOS deals poorly with path_max"
 expect ENAMETOOLONG symlink ${nxx} ${n0}
 rm -rf "${nx%%/*}"

@@ -16,6 +16,7 @@ mkdir -p "${nx%/*}"
 expect 0 mkfifo ${nx} 0644
 expect fifo stat ${nx} type
 expect 0 unlink ${nx}
+todo Linux "libkrun/virtiofs macOS deals poorly with path_max"
 expect ENAMETOOLONG mkfifo ${nxx} 0644
 
 rm -rf "${nx%%/*}"

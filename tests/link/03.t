@@ -25,9 +25,12 @@ expect 0 link ${n0} ${nx}
 expect 2 stat ${n0} nlink
 expect 2 stat ${nx} nlink
 expect 0 unlink ${nx}
+todo Linux "libkrun/virtiofs macOS deals poorly with path_max"
 expect ENAMETOOLONG link ${n0} ${nxx}
+todo Linux "libkrun/virtiofs can't honor number of links"
 expect 1 stat ${n0} nlink
 expect 0 unlink ${n0}
+todo Linux "libkrun/virtiofs macOS deals poorly with path_max"
 expect ENAMETOOLONG link ${nxx} ${n0}
 
 rm -rf "${nx%%/*}"

@@ -16,6 +16,7 @@ mkdir -p "${nx%/*}"
 expect 0 create ${nx} 0644
 expect 0 unlink ${nx}
 expect ENOENT unlink ${nx}
+todo Linux "libkrun/virtiofs macOS deals poorly with path_max"
 expect ENAMETOOLONG unlink ${nxx}
 
 rm -rf "${nx%%/*}"

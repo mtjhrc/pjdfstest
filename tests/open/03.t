@@ -16,6 +16,7 @@ mkdir -p "${nx%/*}"
 expect 0 open ${nx} O_CREAT 0642
 expect regular,0642 stat ${nx} type,mode
 expect 0 unlink ${nx}
+todo Linux "libkrun/virtiofs macOS deals poorly with path_max"
 expect ENAMETOOLONG open ${nxx} O_CREAT 0642
 
 rm -rf "${nx%%/*}"
