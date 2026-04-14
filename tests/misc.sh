@@ -110,6 +110,18 @@ todo()
 	fi
 }
 
+# Mark the next expect as expected-to-fail.
+# Usage: xfail "reason"              -- always xfail
+#        xfail Host:Darwin "reason"  -- only when PJDFSTEST_HOST_OS=Darwin
+xfail()
+{
+	if [ $# -eq 1 ]; then
+		todomsg="${1}"
+	elif [ "${1#Host:}" = "${PJDFSTEST_HOST_OS}" ]; then
+		todomsg="${2}"
+	fi
+}
+
 namegen()
 {
 	echo "pjdfstest_`dd if=/dev/urandom bs=1k count=1 2>/dev/null | openssl md5 | awk '{print $NF}'`"
