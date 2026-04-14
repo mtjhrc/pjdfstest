@@ -16,8 +16,11 @@ mkdir -p "${nx%/*}"
 expect 0 create ${n0} 0644
 expect 0 rename ${n0} ${nx}
 expect 0 rename ${nx} ${n0}
+xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG rename ${n0} ${nxx}
+xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect 0 unlink ${n0}
+xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG rename ${nxx} ${n0}
 
 rm -rf "${nx%%/*}"

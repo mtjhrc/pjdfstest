@@ -43,19 +43,24 @@ expect()
 	r=`${fstest} $* 2>/dev/null | tail -1`
 	echo "${r}" | ${GREP} -Eq '^'${e}'$'
 	if [ $? -eq 0 ]; then
-		if [ -z "${todomsg}" ]; then
+		if [ -n "${xfailmsg}" ]; then
+			echo "not ok ${ntest} - xfail passed unexpectedly: ${xfailmsg}"
+		elif [ -z "${todomsg}" ]; then
 			echo "ok ${ntest}"
 		else
 			echo "ok ${ntest} # TODO ${todomsg}"
 		fi
 	else
-		if [ -z "${todomsg}" ]; then
+		if [ -n "${xfailmsg}" ]; then
+			echo "ok ${ntest} # TODO ${xfailmsg}"
+		elif [ -z "${todomsg}" ]; then
 			echo "not ok ${ntest} - tried '$*', expected ${e}, got ${r}"
 		else
 			echo "not ok ${ntest} # TODO ${todomsg}"
 		fi
 	fi
 	todomsg=""
+	xfailmsg=""
 	: $(( ntest += 1 ))
 }
 
@@ -69,38 +74,48 @@ jexpect()
 	r=`jail -s ${s} / pjdfstest 127.0.0.1 /bin/sh -c "cd ${d} && ${fstest} $* 2>/dev/null" 2>/dev/null | tail -1`
 	echo "${r}" | ${GREP} -Eq '^'${e}'$'
 	if [ $? -eq 0 ]; then
-		if [ -z "${todomsg}" ]; then
+		if [ -n "${xfailmsg}" ]; then
+			echo "not ok ${ntest} - xfail passed unexpectedly: ${xfailmsg}"
+		elif [ -z "${todomsg}" ]; then
 			echo "ok ${ntest}"
 		else
 			echo "ok ${ntest} # TODO ${todomsg}"
 		fi
 	else
-		if [ -z "${todomsg}" ]; then
+		if [ -n "${xfailmsg}" ]; then
+			echo "ok ${ntest} # TODO ${xfailmsg}"
+		elif [ -z "${todomsg}" ]; then
 			echo "not ok ${ntest} - tried '$*', expected ${e}, got ${r}"
 		else
 			echo "not ok ${ntest} # TODO ${todomsg}"
 		fi
 	fi
 	todomsg=""
+	xfailmsg=""
 	: $(( ntest += 1 ))
 }
 
 test_check()
 {
 	if [ $* ] 2>/dev/null ; then
-		if [ -z "${todomsg}" ]; then
+		if [ -n "${xfailmsg}" ]; then
+			echo "not ok ${ntest} - xfail passed unexpectedly: ${xfailmsg}"
+		elif [ -z "${todomsg}" ]; then
 			echo "ok ${ntest}"
 		else
 			echo "ok ${ntest} # TODO ${todomsg}"
 		fi
 	else
-		if [ -z "${todomsg}" ]; then
+		if [ -n "${xfailmsg}" ]; then
+			echo "ok ${ntest} # TODO ${xfailmsg}"
+		elif [ -z "${todomsg}" ]; then
 			echo "not ok ${ntest}"
 		else
 			echo "not ok ${ntest} # TODO ${todomsg}"
 		fi
 	fi
 	todomsg=""
+	xfailmsg=""
 	: $(( ntest += 1 ))
 }
 
@@ -108,18 +123,21 @@ todo()
 {
 	if [ "${os}" = "${1}" -o "${os}:${fs}" = "${1}" ]; then
 		todomsg="${2}"
+		xfailmsg=""
 	fi
 }
 
-# Mark the next expect as expected-to-fail.
+# Mark the next assertion helper as expected-to-fail.
 # Usage: xfail "reason"              -- always xfail
 #        xfail Host:Darwin "reason"  -- only when PJDFSTEST_HOST_OS=Darwin
 xfail()
 {
 	if [ $# -eq 1 ]; then
-		todomsg="${1}"
+		xfailmsg="${1}"
+		todomsg=""
 	elif [ "${1#Host:}" = "${PJDFSTEST_HOST_OS}" ]; then
-		todomsg="${2}"
+		xfailmsg="${2}"
+		todomsg=""
 	fi
 }
 

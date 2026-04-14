@@ -15,6 +15,7 @@ mkdir -p "${nx%/*}"
 expect 0 create ${nx} 0644
 expect 0 unlink ${nx}
 expect ENOENT unlink ${nx}
+xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG unlink ${nxx}
 
 rm -rf "${nx%%/*}"

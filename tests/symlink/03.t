@@ -16,6 +16,8 @@ expect 0 symlink ${nx} ${n0}
 expect 0 unlink ${n0}
 expect 0 symlink ${n0} ${nx}
 expect 0 unlink ${nx}
+xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG symlink ${n0} ${nxx}
+xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG symlink ${nxx} ${n0}
 rm -rf "${nx%%/*}"

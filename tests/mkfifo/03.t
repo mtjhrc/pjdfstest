@@ -15,6 +15,7 @@ mkdir -p "${nx%/*}"
 expect 0 mkfifo ${nx} 0644
 expect fifo stat ${nx} type
 expect 0 unlink ${nx}
+xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG mkfifo ${nxx} 0644
 
 rm -rf "${nx%%/*}"

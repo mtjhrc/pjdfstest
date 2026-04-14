@@ -14,6 +14,7 @@ mkdir -p "${nx%/*}"
 
 expect 0 mkdir ${nx} 0755
 expect 0 rmdir ${nx}
+xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG mkdir ${nxx} 0755
 
 rm -rf "${nx%%/*}"

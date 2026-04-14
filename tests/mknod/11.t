@@ -35,6 +35,7 @@ for type in c b; do
 	# Create char special with old-style numbers
 	expect 0 mknod ${n0} ${type} 0755 1 2
 	expect ${stattype},0755 lstat ${n0} type,mode
+	xfail Host:Darwin "virtiofs: mknod device numbers not preserved"
 	expect 1,2 lstat ${n0} major,minor
 	expect EEXIST mknod ${n0} ${type} 0777 3 4
 	expect 0 unlink ${n0}

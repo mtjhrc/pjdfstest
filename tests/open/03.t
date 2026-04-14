@@ -15,6 +15,7 @@ mkdir -p "${nx%/*}"
 expect 0 open ${nx} O_CREAT 0642
 expect regular,0642 stat ${nx} type,mode
 expect 0 unlink ${nx}
+xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG open ${nxx} O_CREAT 0642
 
 rm -rf "${nx%%/*}"
