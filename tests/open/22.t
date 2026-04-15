@@ -9,7 +9,7 @@ dir=`dirname $0`
 
 n0=`namegen`
 
-for type in regular dir fifo block char socket symlink; do
+for type in regular dir fifo $(supported mknod && echo "block char") socket symlink; do
 	create_file ${type} ${n0}
 	expect EEXIST open ${n0} O_CREAT,O_EXCL 0644
 	if [ "${type}" = "dir" ]; then

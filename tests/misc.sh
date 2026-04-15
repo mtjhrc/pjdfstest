@@ -227,6 +227,9 @@ supported()
 		fi
 		;;
 	mknod)
+		if [ "${PJDFSTEST_HOST_OS}" = "Linux" ]; then
+			return 1
+		fi
 		;;
 	posix_fallocate)
 		if [ "${os}" != "FreeBSD" ]; then

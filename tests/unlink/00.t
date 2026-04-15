@@ -30,6 +30,7 @@ expect fifo lstat ${n0} type
 expect 0 unlink ${n0}
 expect ENOENT lstat ${n0} type
 
+if supported mknod; then
 expect 0 mknod ${n0} b 0644 1 2
 expect block lstat ${n0} type
 expect 0 unlink ${n0}
@@ -39,6 +40,7 @@ expect 0 mknod ${n0} c 0644 1 2
 expect char lstat ${n0} type
 expect 0 unlink ${n0}
 expect ENOENT lstat ${n0} type
+fi
 
 expect 0 bind ${n0}
 expect socket lstat ${n0} type
@@ -64,6 +66,7 @@ ctime2=`${fstest} stat ${n0} ctime`
 test_check $ctime1 -lt $ctime2
 expect 0 unlink ${n0}
 
+if supported mknod; then
 expect 0 mknod ${n0} b 0644 1 2
 expect 0 link ${n0} ${n1}
 ctime1=`${fstest} stat ${n0} ctime`
@@ -81,6 +84,7 @@ expect 0 unlink ${n1}
 ctime2=`${fstest} stat ${n0} ctime`
 test_check $ctime1 -lt $ctime2
 expect 0 unlink ${n0}
+fi
 
 expect 0 bind ${n0}
 expect 0 link ${n0} ${n1}
@@ -108,6 +112,7 @@ ctime2=`${fstest} stat ${n0} ctime`
 test_check $ctime1 -eq $ctime2
 expect 0 unlink ${n0}
 
+if supported mknod; then
 expect 0 mknod ${n0} b 0644 1 2
 ctime1=`${fstest} stat ${n0} ctime`
 sleep 1
@@ -123,6 +128,7 @@ expect EACCES -u 65534 unlink ${n0}
 ctime2=`${fstest} stat ${n0} ctime`
 test_check $ctime1 -eq $ctime2
 expect 0 unlink ${n0}
+fi
 
 expect 0 bind ${n0}
 ctime1=`${fstest} stat ${n0} ctime`
@@ -154,6 +160,7 @@ ctime=`${fstest} stat ${n0} ctime`
 test_check $time -lt $ctime
 expect 0 rmdir ${n0}
 
+if supported mknod; then
 expect 0 mkdir ${n0} 0755
 expect 0 mknod ${n0}/${n1} b 0644 1 2
 time=`${fstest} stat ${n0} ctime`
@@ -175,6 +182,7 @@ test_check $time -lt $mtime
 ctime=`${fstest} stat ${n0} ctime`
 test_check $time -lt $ctime
 expect 0 rmdir ${n0}
+fi
 
 expect 0 mkdir ${n0} 0755
 expect 0 bind ${n0}/${n1}

@@ -14,7 +14,7 @@ n1=`namegen`
 
 expect 0 create ${n0} 0644
 
-for type in regular dir fifo block char socket symlink; do
+for type in regular dir fifo $(supported mknod && echo "block char") socket symlink; do
 	create_file ${type} ${n1}
 	expect EEXIST link ${n0} ${n1}
 	if [ "${type}" = "dir" ]; then

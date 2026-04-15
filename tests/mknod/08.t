@@ -11,7 +11,7 @@ require mknod
 
 n0=`namegen`
 
-for type in regular dir fifo block char socket symlink; do
+for type in regular dir fifo $(supported mknod && echo "block char") socket symlink; do
 	create_file ${type} ${n0}
 	expect EEXIST mknod ${n0} b 0644 0 0
 	expect EEXIST mknod ${n0} c 0644 0 0

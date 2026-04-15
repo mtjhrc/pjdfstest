@@ -27,7 +27,7 @@ n2=`namegen`
 
 expect 0 mkdir ${n0} 0755
 
-for type in regular dir fifo block char socket symlink; do
+for type in regular dir fifo $(supported mknod && echo "block char") socket symlink; do
 	create_file ${type} ${n1}
 	for flag in ${flags1}; do
 		expect 0 chflags ${n0} ${flag}
@@ -42,7 +42,7 @@ for type in regular dir fifo block char socket symlink; do
 	fi
 done
 
-for type in regular dir fifo block char socket symlink; do
+for type in regular dir fifo $(supported mknod && echo "block char") socket symlink; do
 	create_file ${type} ${n1}
 	for flag in ${flags2}; do
 		expect 0 chflags ${n0} ${flag}

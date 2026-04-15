@@ -15,7 +15,7 @@ expect 0 mkdir ${n0} 0755
 cdir=`pwd`
 cd ${n0}
 
-for type in regular dir fifo block char socket symlink; do
+for type in regular dir fifo $(supported mknod && echo "block char") socket symlink; do
 	if [ "${type}" != "symlink" ]; then
 		create_file ${type} ${n1}
 		expect 0 chmod ${n1} 01621
@@ -53,7 +53,7 @@ expect 01700 stat ${n1} mode
 expect 0 unlink ${n2}
 expect 0 rmdir ${n1}
 
-for type in regular fifo block char socket symlink; do
+for type in regular fifo $(supported mknod && echo "block char") socket symlink; do
 	if [ "${type}" != "symlink" ]; then
 		create_file ${type} ${n1} 0640 65534 65534
 		expect 0 symlink ${n1} ${n2}
