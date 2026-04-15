@@ -8,7 +8,6 @@ dir=`dirname $0`
 
 require posix_fallocate
 
-echo "1..22"
 
 n0=`namegen`
 n1=`namegen`

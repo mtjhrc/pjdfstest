@@ -6,7 +6,6 @@ desc="open returns ENOENT if a component of the path name that must exist does n
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..4"
 
 n0=`namegen`
 n1=`namegen`

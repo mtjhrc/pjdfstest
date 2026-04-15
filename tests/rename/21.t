@@ -6,7 +6,6 @@ desc="write access to subdirectory is required to move it to another directory"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..16"
 
 n0=`namegen`
 n1=`namegen`

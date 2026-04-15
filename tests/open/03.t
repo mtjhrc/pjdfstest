@@ -6,7 +6,6 @@ desc="open returns ENAMETOOLONG if an entire path name exceeded ${PATH_MAX} char
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..4"
 
 nx=`dirgen_max`
 nxx="${nx}x"

@@ -8,7 +8,6 @@ dir=`dirname $0`
 
 require mknod
 
-echo "1..3"
 
 n0=`namegen`
 n1=`namegen`

@@ -6,7 +6,6 @@ desc="chown returns EACCES when search permission is denied for a component of t
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..18"
 
 n0=`namegen`
 n1=`namegen`

@@ -7,7 +7,6 @@ desc="An open file will not be immediately freed by unlink"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..7"
 
 n0=`namegen`
 n2=`namegen`

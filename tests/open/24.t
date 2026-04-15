@@ -13,14 +13,12 @@ Linux)
 	expected_error=ENXIO
 	;;
 *)
-	echo "1..0 # SKIP: unsupported OS: ${os}"
-	exit 0
+	quick_exit
 	;;
 esac
 
 desc="open returns $expected_error when trying to open UNIX domain socket"
 
-echo "1..5"
 
 n0=`namegen`
 

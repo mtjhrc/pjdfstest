@@ -14,7 +14,6 @@ n2=`namegen`
 
 case "${os}:${fs}" in
 SunOS:UFS)
-	echo "1..10"
 
 	expect 0 mkdir ${n0} 0755
 	expect 0 link ${n0} ${n1}
@@ -22,7 +21,6 @@ SunOS:UFS)
 	expect 0 rmdir ${n0}
 	;;
 *)
-	echo "1..9"
 
 	expect 0 mkdir ${n0} 0755
 	expect EPERM link ${n0} ${n1}

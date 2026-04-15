@@ -6,7 +6,6 @@ desc="rmdir returns EACCES when write permission is denied on the directory cont
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..10"
 
 n0=`namegen`
 n1=`namegen`

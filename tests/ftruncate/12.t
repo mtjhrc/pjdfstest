@@ -6,7 +6,6 @@ desc="truncate returns EFBIG or EINVAL if the length argument was greater than t
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..3"
 
 n0=`namegen`
 

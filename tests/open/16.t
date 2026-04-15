@@ -11,7 +11,6 @@ else
 fi
 desc="open returns $error when O_NOFOLLOW was specified and the target is a symbolic link"
 
-echo "1..6"
 
 n0=`namegen`
 n1=`namegen`

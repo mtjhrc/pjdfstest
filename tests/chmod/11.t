@@ -6,11 +6,6 @@ desc="chmod returns EFTYPE if the effective user ID is not the super-user, the m
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-if supported lchmod; then
-	echo "1..173"
-else
-	echo "1..109"
-fi
 
 n0=`namegen`
 n1=`namegen`

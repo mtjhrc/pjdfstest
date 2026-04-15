@@ -6,7 +6,6 @@ desc="rename returns EINVAL when the 'from' argument is a parent directory of 't
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..6"
 
 n0=`namegen`
 n1=`namegen`

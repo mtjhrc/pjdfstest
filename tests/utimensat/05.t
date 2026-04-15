@@ -9,7 +9,6 @@ dir=`dirname $0`
 
 require "utimensat"
 
-echo "1..16"
 
 n0=`namegen`
 n1=`namegen`

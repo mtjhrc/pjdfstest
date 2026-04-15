@@ -6,7 +6,6 @@ desc="rename returns EACCES when the requested link requires writing in a direct
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..17"
 
 n0=`namegen`
 n1=`namegen`

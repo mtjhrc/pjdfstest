@@ -9,7 +9,6 @@ dir=`dirname $0`
 
 require rename_ctime
 
-echo "1..30"
 
 src=`namegen`
 dst=`namegen`

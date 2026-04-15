@@ -6,11 +6,6 @@ desc="chmod returns EFAULT if the path argument points outside the process's all
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-if supported lchmod; then
-	echo "1..4"
-else
-	echo "1..2"
-fi
 
 expect EFAULT chmod NULL 0644
 expect EFAULT chmod DEADCODE 0644

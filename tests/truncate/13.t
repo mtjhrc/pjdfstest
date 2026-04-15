@@ -6,7 +6,6 @@ desc="truncate returns EINVAL if the length argument was less than 0"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..4"
 
 n0=`namegen`
 

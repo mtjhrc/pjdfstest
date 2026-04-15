@@ -6,7 +6,6 @@ desc="rename returns ENAMETOOLONG if an entire length of either path name exceed
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..6"
 
 n0=`namegen`
 nx=`dirgen_max`

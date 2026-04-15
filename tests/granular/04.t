@@ -8,7 +8,6 @@ dir=`dirname $0`
 
 nfsv4acls || quick_exit
 
-echo "1..22"
 
 n0=`namegen`
 n2=`namegen`

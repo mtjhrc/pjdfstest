@@ -6,7 +6,6 @@ desc="truncate returns ENAMETOOLONG if a component of a pathname exceeded {NAME_
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..5"
 
 nx=`namegen_max`
 nxx="${nx}x"

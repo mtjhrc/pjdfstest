@@ -8,7 +8,6 @@ dir=`dirname $0`
 
 require mknod
 
-echo "1..12"
 
 nx=`dirgen_max`
 nxx="${nx}x"

@@ -8,7 +8,6 @@ dir=`dirname $0`
 
 require link
 
-echo "1..13"
 
 n0=`namegen`
 nx=`dirgen_max`

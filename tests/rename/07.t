@@ -12,12 +12,10 @@ case "${os}:${fs}" in
 FreeBSD:ZFS)
 	flags1="SF_IMMUTABLE SF_APPEND"
 	flags2="SF_NOUNLINK"
-	echo "1..128"
 	;;
 FreeBSD:UFS)
 	flags1="SF_IMMUTABLE SF_APPEND UF_IMMUTABLE UF_APPEND"
 	flags2="SF_NOUNLINK UF_NOUNLINK"
-	echo "1..212"
 	;;
 *)
 	quick_exit

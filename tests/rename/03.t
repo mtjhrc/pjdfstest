@@ -6,7 +6,6 @@ desc="rename returns ENOENT if a component of the 'from' path does not exist, or
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..6"
 
 n0=`namegen`
 n1=`namegen`

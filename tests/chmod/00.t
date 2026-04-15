@@ -6,11 +6,6 @@ desc="chmod changes permission"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-if supported lchmod; then
-	echo "1..203"
-else
-	echo "1..119"
-fi
 
 n0=`namegen`
 n1=`namegen`

@@ -8,7 +8,6 @@ dir=`dirname $0`
 
 [ "${os}" = "FreeBSD" ] || quick_exit
 
-echo "1..23"
 
 n0=`namegen`
 n1=`namegen`

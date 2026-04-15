@@ -6,11 +6,6 @@ desc="chmod returns ELOOP if too many symbolic links were encountered in transla
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-if supported lchmod; then
-	echo "1..10"
-else
-	echo "1..8"
-fi
 
 n0=`namegen`
 n1=`namegen`

@@ -6,7 +6,6 @@ desc="chown returns ENOTDIR if a component of the path prefix is not a directory
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..22"
 
 n0=`namegen`
 n1=`namegen`

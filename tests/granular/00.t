@@ -8,7 +8,6 @@ dir=`dirname $0`
 
 [ "${os}:${fs}" = "FreeBSD:ZFS" ] || quick_exit
 
-echo "1..49"
 
 n0=`namegen`
 n1=`namegen`

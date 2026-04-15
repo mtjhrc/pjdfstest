@@ -8,7 +8,6 @@ dir=`dirname $0`
 
 require chflags
 
-echo "1..6"
 
 n0=`namegen`
 n1=`namegen`

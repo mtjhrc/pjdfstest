@@ -10,10 +10,8 @@ require chflags
 
 case "${os}:${fs}" in
 FreeBSD:ZFS)
-	echo "1..16"
 	;;
 FreeBSD:UFS)
-	echo "1..30"
 	;;
 *)
 	quick_exit

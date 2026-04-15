@@ -11,10 +11,8 @@ require link
 
 case "${os}:${fs}" in
 FreeBSD:ZFS)
-	echo "1..28"
 	;;
 FreeBSD:UFS)
-	echo "1..48"
 	;;
 *)
 	quick_exit

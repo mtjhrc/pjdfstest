@@ -6,7 +6,6 @@ desc="rmdir returns EINVAL if the last component of the path is '.' and EEXIST o
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..6"
 
 n0=`namegen`
 n1=`namegen`

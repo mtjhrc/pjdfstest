@@ -6,7 +6,6 @@ desc="unlink returns ENAMETOOLONG if a component of a pathname exceeded {NAME_MA
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..4"
 
 nx=`namegen_max`
 nxx="${nx}x"

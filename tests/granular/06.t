@@ -15,7 +15,6 @@ then
 	quick_exit
 fi
 
-echo "1..32"
 
 n0=`namegen`
 n2=`namegen`

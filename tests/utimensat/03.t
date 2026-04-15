@@ -11,7 +11,6 @@ require "utimensat"
 
 require stat_st_birthtime
 
-echo "1..12"
 
 n0=`namegen`
 n1=`namegen`

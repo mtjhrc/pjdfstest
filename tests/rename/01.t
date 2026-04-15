@@ -6,7 +6,6 @@ desc="rename returns ENAMETOOLONG if a component of either pathname exceeded {NA
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..8"
 
 n0=`namegen`
 nx=`namegen_max`

@@ -6,7 +6,6 @@ desc="open may return EINVAL when an attempt was made to open a descriptor with 
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..5"
 
 n0=`namegen`
 

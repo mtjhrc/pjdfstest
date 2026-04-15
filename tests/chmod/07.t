@@ -6,11 +6,6 @@ desc="chmod returns EPERM if the operation would change the ownership, but the e
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-if supported lchmod; then
-	echo "1..34"
-else
-	echo "1..25"
-fi
 
 n0=`namegen`
 n1=`namegen`

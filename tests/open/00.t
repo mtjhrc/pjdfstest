@@ -6,7 +6,6 @@ desc="open opens (and eventually creates) a file"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..47"
 
 n0=`namegen`
 n1=`namegen`

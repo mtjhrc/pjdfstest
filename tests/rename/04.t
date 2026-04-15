@@ -6,7 +6,6 @@ desc="rename returns EACCES when a component of either path prefix denies search
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..18"
 
 n0=`namegen`
 n1=`namegen`

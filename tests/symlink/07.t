@@ -6,7 +6,6 @@ desc="symlink returns ELOOP if too many symbolic links were encountered in trans
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..6"
 
 n0=`namegen`
 n1=`namegen`

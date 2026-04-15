@@ -10,10 +10,8 @@ require mknod
 
 case "${os}" in
 SunOS)
-	echo "1..40"
         ;;
 *)
-	echo "1..28"
 	;;
 esac
 

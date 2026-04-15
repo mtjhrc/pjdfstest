@@ -10,7 +10,6 @@ require chflags
 if requires_root
 then
 
-echo "1..17"
 
 n0=`namegen`
 n1=`namegen`
@@ -24,5 +23,4 @@ done
 expect 0 rmdir ${n0}
 
 else
-echo "1..1"
 fi

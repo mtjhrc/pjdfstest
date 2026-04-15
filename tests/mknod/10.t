@@ -8,7 +8,6 @@ dir=`dirname $0`
 
 require mknod
 
-echo "1..2"
 
 expect EFAULT mknod NULL f 0644 0 0
 expect EFAULT mknod DEADCODE f 0644 0 0

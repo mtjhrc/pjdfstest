@@ -6,7 +6,6 @@ desc="rename returns EACCES or EPERM if the directory containing 'from' is marke
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..2353"
 
 n0=`namegen`
 n1=`namegen`

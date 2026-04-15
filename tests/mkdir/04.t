@@ -6,7 +6,6 @@ desc="mkdir returns ENOENT if a component of the path prefix does not exist"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..3"
 
 n0=`namegen`
 n1=`namegen`

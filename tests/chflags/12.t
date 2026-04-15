@@ -10,7 +10,6 @@ require chflags
 
 case "${os}:${fs}" in
 FreeBSD:UFS)
-	echo "1..14"
 
 	n0=`namegen`
 	n1=`namegen`
@@ -38,7 +37,6 @@ FreeBSD:UFS)
 	expect 0 rmdir ${n0}
 	;;
 FreeBSD:ZFS)
-	echo "1..12"
 
 	n0=`namegen`
 	n1=`namegen`

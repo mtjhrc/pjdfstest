@@ -8,7 +8,6 @@ dir=`dirname $0`
 
 require chflags_SF_SNAPSHOT
 
-echo "1..145"
 
 n0=`namegen`
 n1=`namegen`

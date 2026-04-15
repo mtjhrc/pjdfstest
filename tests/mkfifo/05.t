@@ -6,7 +6,6 @@ desc="mkfifo returns EACCES when search permission is denied for a component of 
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..12"
 
 n0=`namegen`
 n1=`namegen`

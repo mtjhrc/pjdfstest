@@ -8,7 +8,6 @@ dir=`dirname $0`
 
 require chflags
 
-echo "1..12"
 
 nx=`dirgen_max`
 nxx="${nx}x"

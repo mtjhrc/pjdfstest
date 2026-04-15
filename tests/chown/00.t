@@ -6,11 +6,6 @@ desc="chown changes ownership"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-if supported lchmod; then
-	echo "1..1306"
-else
-	echo "1..1280"
-fi
 
 n0=`namegen`
 n1=`namegen`

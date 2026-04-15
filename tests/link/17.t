@@ -8,7 +8,6 @@ dir=`dirname $0`
 
 require link
 
-echo "1..8"
 
 n0=`namegen`
 

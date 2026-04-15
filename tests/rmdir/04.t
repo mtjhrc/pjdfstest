@@ -6,7 +6,6 @@ desc="rmdir returns ENOENT if the named directory does not exist"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..4"
 
 n0=`namegen`
 n1=`namegen`

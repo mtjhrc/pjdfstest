@@ -11,10 +11,8 @@ require chflags
 
 case "${os}:${fs}" in
 FreeBSD:UFS)
-	echo "1..30"
 	;;
 *)
-	echo "1..17"
 	;;
 esac
 

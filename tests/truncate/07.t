@@ -6,7 +6,6 @@ desc="truncate returns ELOOP if too many symbolic links were encountered in tran
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..6"
 
 n0=`namegen`
 n1=`namegen`

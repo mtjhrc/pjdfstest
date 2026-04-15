@@ -7,7 +7,6 @@ desc="rename succeeds when to is multiply linked"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..42"
 
 src=`namegen`
 dst=`namegen`

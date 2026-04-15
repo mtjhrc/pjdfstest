@@ -6,11 +6,6 @@ desc="chmod returns ENOENT if the named file does not exist"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-if supported lchmod; then
-	echo "1..9"
-else
-	echo "1..7"
-fi
 
 n0=`namegen`
 n1=`namegen`

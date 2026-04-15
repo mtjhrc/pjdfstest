@@ -11,11 +11,9 @@ require chflags
 case "${os}:${fs}" in
 FreeBSD:ZFS)
 	flags="SF_IMMUTABLE SF_NOUNLINK SF_APPEND"
-	echo "1..195"
 	;;
 FreeBSD:UFS)
 	flags="SF_IMMUTABLE SF_NOUNLINK SF_APPEND UF_IMMUTABLE UF_NOUNLINK UF_APPEND"
-	echo "1..351"
 	;;
 *)
 	quick_exit

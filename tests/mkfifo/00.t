@@ -6,7 +6,6 @@ desc="mkfifo creates fifo files"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..36"
 
 n0=`namegen`
 n1=`namegen`

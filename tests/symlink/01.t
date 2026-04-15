@@ -6,7 +6,6 @@ desc="symlink returns ENOTDIR if a component of the name2 path prefix is not a d
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..5"
 
 n0=`namegen`
 n1=`namegen`

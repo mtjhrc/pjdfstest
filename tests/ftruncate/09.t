@@ -6,7 +6,6 @@ desc="truncate returns EISDIR if the named file is a directory"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..3"
 
 n0=`namegen`
 

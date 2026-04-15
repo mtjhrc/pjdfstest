@@ -6,7 +6,6 @@ desc="rename of a directory updates its .. link"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..13"
 
 src_parent=`namegen`
 dst_parent=`namegen`

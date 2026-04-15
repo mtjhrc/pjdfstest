@@ -6,7 +6,6 @@ desc="rmdir returns EACCES or EPERM if the directory containing the directory to
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..47"
 
 n0=`namegen`
 n1=`namegen`

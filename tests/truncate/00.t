@@ -6,7 +6,6 @@ desc="truncate descrease/increase file size"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..21"
 
 n0=`namegen`
 n1=`namegen`

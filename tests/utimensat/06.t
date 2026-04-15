@@ -10,7 +10,6 @@ dir=`dirname $0`
 require "utimensat"
 require "UTIME_NOW"
 
-echo "1..13"
 
 n0=`namegen`
 n1=`namegen`

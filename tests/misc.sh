@@ -1,5 +1,6 @@
 
 ntest=1
+trap 'echo "1..$(( ntest - 1 ))"' EXIT
 
 confdir=${dir:-$(dirname "$0")}
 maindir=${dir:-$(dirname "$0")}
@@ -175,8 +176,8 @@ dirgen_max()
 
 quick_exit()
 {
-	echo "1..1"
-	echo "ok 1"
+	echo "ok ${ntest} # SKIP"
+	: $(( ntest += 1 ))
 	exit 0
 }
 

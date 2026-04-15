@@ -6,7 +6,6 @@ desc="open returns EACCES when the required permissions (for reading and/or writ
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..144"
 
 n0=`namegen`
 n1=`namegen`

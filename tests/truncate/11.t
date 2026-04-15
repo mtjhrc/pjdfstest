@@ -9,7 +9,6 @@ dir=`dirname $0`
 [ "${os}" = "FreeBSD" ] || quick_exit
 noexec && quick_exit
 
-echo "1..2"
 
 n0=`namegen`
 

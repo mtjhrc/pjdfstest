@@ -6,7 +6,6 @@ desc="rename returns EFAULT if one of the pathnames specified is outside the pro
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..8"
 
 n0=`namegen`
 

@@ -6,7 +6,6 @@ desc="mkfifo returns EEXIST if the named file exists"
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..21"
 
 n0=`namegen`
 

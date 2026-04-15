@@ -6,7 +6,6 @@ desc="symlink returns EACCES when a component of the name2 path prefix denies se
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..12"
 
 n0=`namegen`
 n1=`namegen`

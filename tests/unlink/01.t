@@ -6,7 +6,6 @@ desc="unlink returns ENOTDIR if a component of the path prefix is not a director
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..5"
 
 n0=`namegen`
 n1=`namegen`

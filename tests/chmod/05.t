@@ -6,11 +6,6 @@ desc="chmod returns EACCES when search permission is denied for a component of t
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-if supported lchmod; then
-	echo "1..19"
-else
-	echo "1..14"
-fi
 
 n0=`namegen`
 n1=`namegen`

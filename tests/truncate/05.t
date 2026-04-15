@@ -6,7 +6,6 @@ desc="truncate returns EACCES when search permission is denied for a component o
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
-echo "1..15"
 
 n0=`namegen`
 n1=`namegen`
