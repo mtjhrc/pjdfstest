@@ -7,7 +7,7 @@ dir=`dirname $0`
 . ${dir}/../misc.sh
 
 require link
-
+require path_max
 
 n0=`namegen`
 nx=`dirgen_max`
@@ -24,12 +24,9 @@ expect 0 link ${n0} ${nx}
 expect 2 stat ${n0} nlink
 expect 2 stat ${nx} nlink
 expect 0 unlink ${nx}
-xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG link ${n0} ${nxx}
-xfail Host:Darwin "virtiofs: nlink not tracked"
 expect 1 stat ${n0} nlink
 expect 0 unlink ${n0}
-xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG link ${nxx} ${n0}
 
 rm -rf "${nx%%/*}"

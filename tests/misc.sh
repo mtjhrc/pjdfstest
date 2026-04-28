@@ -231,6 +231,11 @@ supported()
 			return 1
 		fi
 		;;
+	path_max)
+		if [ "${PJDFSTEST_HOST_OS}" = "Darwin" ]; then
+			return 1
+		fi
+		;;
 	posix_fallocate)
 		if [ "${os}" != "FreeBSD" ]; then
 			return 1

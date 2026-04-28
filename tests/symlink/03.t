@@ -6,6 +6,7 @@ desc="symlink returns ENAMETOOLONG if an entire length of either path name excee
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
+require path_max
 
 n0=`namegen`
 nx=`dirgen_max`
@@ -16,8 +17,6 @@ expect 0 symlink ${nx} ${n0}
 expect 0 unlink ${n0}
 expect 0 symlink ${n0} ${nx}
 expect 0 unlink ${nx}
-xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG symlink ${n0} ${nxx}
-xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG symlink ${nxx} ${n0}
 rm -rf "${nx%%/*}"

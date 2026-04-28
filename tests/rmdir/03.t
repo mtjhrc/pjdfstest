@@ -6,6 +6,7 @@ desc="rmdir returns ENAMETOOLONG if an entire path name exceeded ${PATH_MAX} cha
 dir=`dirname $0`
 . ${dir}/../misc.sh
 
+require path_max
 
 nx=`dirgen_max`
 nxx="${nx}x"
@@ -16,7 +17,6 @@ expect 0 mkdir ${nx} 0755
 expect dir,0755 stat ${nx} type,mode
 expect 0 rmdir ${nx}
 expect ENOENT rmdir ${nx}
-xfail Host:Darwin "virtiofs: macOS path_max is unreliable"
 expect ENAMETOOLONG rmdir ${nxx}
 
 rm -rf "${nx%%/*}"
